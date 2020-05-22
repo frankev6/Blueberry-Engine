@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SandboxTesting", "SandboxTesting\SandboxTesting.vcxproj", "{8B8A47F6-C8A8-49F0-9EE8-9EB36FCF026A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A587EB82-6C57-4AC4-8E92-436DC37C734C} = {A587EB82-6C57-4AC4-8E92-436DC37C734C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Blueberry-Engine", "Blueberry-Engine\Blueberry-Engine.vcxproj", "{A587EB82-6C57-4AC4-8E92-436DC37C734C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B8A47F6-C8A8-49F0-9EE8-9EB36FCF026A}.Debug|x64.ActiveCfg = Debug|x64
+		{8B8A47F6-C8A8-49F0-9EE8-9EB36FCF026A}.Debug|x64.Build.0 = Debug|x64
+		{8B8A47F6-C8A8-49F0-9EE8-9EB36FCF026A}.Release|x64.ActiveCfg = Release|x64
+		{8B8A47F6-C8A8-49F0-9EE8-9EB36FCF026A}.Release|x64.Build.0 = Release|x64
+		{A587EB82-6C57-4AC4-8E92-436DC37C734C}.Debug|x64.ActiveCfg = Debug|x64
+		{A587EB82-6C57-4AC4-8E92-436DC37C734C}.Debug|x64.Build.0 = Debug|x64
+		{A587EB82-6C57-4AC4-8E92-436DC37C734C}.Release|x64.ActiveCfg = Release|x64
+		{A587EB82-6C57-4AC4-8E92-436DC37C734C}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A4748B1-38E5-4854-B260-FBF5682FF510}
+	EndGlobalSection
+EndGlobal
