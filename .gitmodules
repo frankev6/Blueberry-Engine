@@ -1,0 +1,3 @@
+[submodule "Blueberry-Engine/vendor/spdlog"]
+	path = Blueberry-Engine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
