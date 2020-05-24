@@ -4,6 +4,9 @@
     <Filter Include="BlueberryEngine">
       <UniqueIdentifier>{273BBA0C-93C6-27D1-9CD7-AAC508E283D1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BlueberryEngine\Events">
+      <UniqueIdentifier>{2BF5062D-17EF-2F7F-005C-C68FECF495EB}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BlueberryEngine.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\BlueberryEngine\EntryPoint.h">
       <Filter>BlueberryEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Events\ApplicationEvent.h">
+      <Filter>BlueberryEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Events\Event.h">
+      <Filter>BlueberryEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Events\KeyEvent.h">
+      <Filter>BlueberryEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Events\MouseEvent.h">
+      <Filter>BlueberryEngine\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\BlueberryEngine\Log.h">
       <Filter>BlueberryEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\bepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BlueberryEngine\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\BlueberryEngine\Log.cpp">
       <Filter>BlueberryEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\bepch.cpp" />
   </ItemGroup>
 </Project>

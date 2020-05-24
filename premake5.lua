@@ -18,6 +18,9 @@ project "Blueberry-Engine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "bepch.h"
+	pchsource "%{prj.name}/src/bepch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

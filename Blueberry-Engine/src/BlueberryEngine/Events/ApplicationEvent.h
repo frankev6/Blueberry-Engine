@@ -1,8 +1,7 @@
 #pragma once
-
+#include "bepch.h"
 #include "Event.h"
 
-#include <sstream>
 
 namespace BE
 {

@@ -1,8 +1,6 @@
 #pragma once
-
+#include "bepch.h"
 #include "BlueberryEngine/Core.h"
-#include <string>
-#include <functional>
 
 namespace BE {
 

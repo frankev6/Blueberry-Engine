@@ -1,7 +1,6 @@
 #pragma once
-
+#include "bepch.h"
 #include "Event.h"
-#include <sstream>
 
 namespace BE {
 	class BE_API MouseMovedEvent : public Event
