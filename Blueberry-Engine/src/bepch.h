@@ -11,6 +11,7 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+#include "BlueberryEngine/Log.h"
 
 
 #ifdef BE_PLATFORM_WINDOWS
