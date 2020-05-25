@@ -35,6 +35,10 @@
       <Filter>BlueberryEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\bepch.h" />
+    <ClInclude Include="src\BlueberryEngine\Window.h">
+      <Filter>BlueberryEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BlueberryEngine\Application.cpp">
@@ -44,5 +48,6 @@
       <Filter>BlueberryEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\bepch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

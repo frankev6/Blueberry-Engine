@@ -10,6 +10,12 @@ workspace "Blueberry-Engine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 	
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Blueberry-Engine/vendor/GLFW/include"
+
+include "Blueberry-Engine/vendor/GLFW"
+
 project "Blueberry-Engine"
 	location "Blueberry-Engine"
 	kind "SharedLib"
@@ -30,8 +36,15 @@ project "Blueberry-Engine"
 	includedirs
 	{
 	"%{prj.name}/vendor/spdlog/include",
-	"%{prj.name}/src"
+	"%{prj.name}/src",
+	"%{IncludeDir.GLFW}"
 	}
+	links{
+		"GLFW",
+		"opengl32.lib"
+	
+	}
+
 	
 	filter "system:windows"
 		cppdialect "C++17"

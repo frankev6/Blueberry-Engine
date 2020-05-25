@@ -1,3 +1,6 @@
 [submodule "Blueberry-Engine/vendor/spdlog"]
 	path = Blueberry-Engine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Blueberry-Engine/vendor/GLFW"]
+	path = Blueberry-Engine/vendor/GLFW
+	url = https://github.com/frankev6/glfw
