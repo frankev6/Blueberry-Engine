@@ -13,8 +13,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Blueberry-Engine/vendor/GLFW/include"
+IncludeDir["GLAD"] = "Blueberry-Engine/vendor/GLAD/include"
+IncludeDir["ImGui"] = "Blueberry-Engine/vendor/imgui/include"
 
 include "Blueberry-Engine/vendor/GLFW"
+include "Blueberry-Engine/vendor/GLAD"
+include "Blueberry-Engine/vendor/imgui"
 
 project "Blueberry-Engine"
 	location "Blueberry-Engine"
@@ -37,12 +41,15 @@ project "Blueberry-Engine"
 	{
 	"%{prj.name}/vendor/spdlog/include",
 	"%{prj.name}/src",
-	"%{IncludeDir.GLFW}"
+	"%{IncludeDir.GLFW}",
+	"%{IncludeDir.GLAD}",
+	"%{IncludeDir.ImGui}"
 	}
 	links{
 		"GLFW",
+		"GLAD",
+		"ImGui",
 		"opengl32.lib"
-	
 	}
 
 	
@@ -54,7 +61,8 @@ project "Blueberry-Engine"
 		defines{
 			"BE_PLATFORM_WINDOWS",
 			"BE_BUILD_DLL",
-			"_WINDLL"
+			"_WINDLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 	postbuildcommands{

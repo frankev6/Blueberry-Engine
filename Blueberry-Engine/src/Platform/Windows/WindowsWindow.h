@@ -1,11 +1,8 @@
 #pragma once
 #include "bepch.cpp"
-#include <GLFW\glfw3.h>
 #include <BlueberryEngine\Window.h>
-
+#include <GLFW\glfw3.h>
 namespace BE {
-
-	
 
 	class WindowsWindow : public Window
 	{

@@ -4,3 +4,6 @@
 [submodule "Blueberry-Engine/vendor/GLFW"]
 	path = Blueberry-Engine/vendor/GLFW
 	url = https://github.com/frankev6/glfw
+[submodule "imgui"]
+	path = imgui
+	url = https://github.com/TheCherno/imgui
