@@ -10,6 +10,10 @@
 #error	Blueberry only supports Windows
 #endif
 
+#ifdef BE_DEBUG
+	#define BE_ENABLE_ASSERTS	
+#endif
+
 #ifdef BE_ENABLE_ASSERTS
 #define	BE_ASSERT(x, ...)	{ if (!(x)){BE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();} }
 #define BE_C_ASSERT(x, ...)	{ if (!(x)){BE_C_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();} }
