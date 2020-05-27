@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>bepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BE_PLATFORM_WINDOWS;BE_BUILD_DLL;_WINDLL;GLFW_INCLUDE_NONE;BE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>bepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BE_PLATFORM_WINDOWS;BE_BUILD_DLL;_WINDLL;GLFW_INCLUDE_NONE;BE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -130,7 +130,7 @@
       <PrecompiledHeaderFile>bepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BE_PLATFORM_WINDOWS;BE_BUILD_DLL;_WINDLL;GLFW_INCLUDE_NONE;BE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -152,6 +152,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\BlueberryEngine\Logic\BehaviourLogic\BEbehaviour.h" />
+    <ClInclude Include="src\BlueberryEngine\Logic\Entity.h" />
+    <ClInclude Include="src\BlueberryEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\BlueberryEngine.h" />
     <ClInclude Include="src\BlueberryEngine\Application.h" />
     <ClInclude Include="src\BlueberryEngine\Core.h" />
@@ -163,15 +166,24 @@
     <ClInclude Include="src\BlueberryEngine\Layer.h" />
     <ClInclude Include="src\BlueberryEngine\LayerStack.h" />
     <ClInclude Include="src\BlueberryEngine\Log.h" />
+    <ClInclude Include="src\BlueberryEngine\Logic\Modules\Module.h" />
+    <ClInclude Include="src\BlueberryEngine\Logic\Modules\Trans2D.h" />
     <ClInclude Include="src\BlueberryEngine\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\bepch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\BlueberryEngine\Logic\BehaviourLogic\BEbehaviour.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Logic\Entity.cpp" />
+    <ClCompile Include="src\BlueberryEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\BlueberryEngine\Application.cpp" />
     <ClCompile Include="src\BlueberryEngine\Layer.cpp" />
     <ClCompile Include="src\BlueberryEngine\LayerStack.cpp" />
     <ClCompile Include="src\BlueberryEngine\Log.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Logic\Modules\Module.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Logic\Modules\Trans2D.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\bepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

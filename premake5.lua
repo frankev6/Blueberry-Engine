@@ -14,7 +14,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Blueberry-Engine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Blueberry-Engine/vendor/GLAD/include"
-IncludeDir["ImGui"] = "Blueberry-Engine/vendor/imgui/include"
+IncludeDir["ImGui"] = "Blueberry-Engine/vendor/imgui"
 
 include "Blueberry-Engine/vendor/GLFW"
 include "Blueberry-Engine/vendor/GLAD"

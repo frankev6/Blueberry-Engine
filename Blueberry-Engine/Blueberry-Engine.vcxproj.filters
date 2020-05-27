@@ -10,6 +10,9 @@
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
@@ -49,10 +52,18 @@
     <ClInclude Include="src\BlueberryEngine\Window.h">
       <Filter>BlueberryEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\bepch.h" />
+    <ClInclude Include="src\BlueberryEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\BlueberryEngine\Logic\Entity.h" />
+    <ClInclude Include="src\BlueberryEngine\Logic\BehaviourLogic\BEbehaviour.h" />
+    <ClInclude Include="src\BlueberryEngine\Logic\Modules\Module.h" />
+    <ClInclude Include="src\BlueberryEngine\Logic\Modules\Trans2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BlueberryEngine\Application.cpp">
@@ -67,9 +78,17 @@
     <ClCompile Include="src\BlueberryEngine\Log.cpp">
       <Filter>BlueberryEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\bepch.cpp" />
+    <ClCompile Include="src\BlueberryEngine\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Logic\Entity.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Logic\BehaviourLogic\BEbehaviour.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Logic\Modules\Module.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Logic\Modules\Trans2D.cpp" />
   </ItemGroup>
 </Project>
