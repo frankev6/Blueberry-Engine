@@ -56,7 +56,6 @@ project "Blueberry-Engine"
 	links{
 		"GLFW",
 		"GLAD",
-		"glm",
 		"ImGui",
 		"opengl32.lib"
 	}
