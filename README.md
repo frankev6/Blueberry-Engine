@@ -1,4 +1,4 @@
-# Blueberry-Engine
+# Blueberry Engine
 
 ![Blueberry-Engine](/Resources/BlueberryEngineLogo.jpg?raw=true "Blueberry-Engine")
 
