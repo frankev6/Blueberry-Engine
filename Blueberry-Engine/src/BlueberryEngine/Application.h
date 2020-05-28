@@ -3,8 +3,8 @@
 #include "Events/Event.h"
 #include "Events/ApplicationEvent.h"
 #include "Window.h"
-#include <BlueberryEngine\LayerStack.h>
-
+#include <BlueberryEngine/LayerStack.h>
+#include "BlueberryEngine/ImGui/ImGuiLayer.h"
 
 namespace BE {
 
@@ -30,6 +30,7 @@ namespace BE {
 		static Application* s_Instance;
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	};

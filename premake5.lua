@@ -109,6 +109,7 @@ project "SandboxTesting"
 	{
 	"Blueberry-Engine/vendor/spdlog/include",
 	"Blueberry-Engine/src",
+	"Blueberry-Engine/vendor",
 	"%{IncludeDir.glm}"
 	}
 

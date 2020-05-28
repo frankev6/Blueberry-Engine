@@ -1,5 +1,5 @@
 #include	<BlueberryEngine.h>
-
+#include	 "imgui/imgui.h"
 
 class ExampleLayer : public BE::Layer {
 public:
@@ -11,6 +11,13 @@ public:
 			BE_TRACE("Tab key is pressed (poll)!");
 	}
 
+	/*virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
+	}
+	*/
 	void OnEvent(BE::Event& event) override {
 		
 		BE_TRACE("{0}", event); 
@@ -33,7 +40,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new BE::ImGuiLayer());
 	}
 	~Sandbox()
 	{
