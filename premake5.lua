@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Blueberry-Engine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Blueberry-Engine/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Blueberry-Engine/vendor/imgui"
+IncludeDir["glm"] = "Blueberry-Engine/vendor/glm"
 
 group "Dependencies"
 include "Blueberry-Engine/vendor/GLFW"
@@ -38,7 +39,9 @@ project "Blueberry-Engine"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
+		"%{prj.name}/vendor/glm/glm/**.hpp"
 	}
 
 	includedirs
@@ -47,11 +50,13 @@ project "Blueberry-Engine"
 	"%{prj.name}/src",
 	"%{IncludeDir.GLFW}",
 	"%{IncludeDir.GLAD}",
-	"%{IncludeDir.ImGui}"
+	"%{IncludeDir.ImGui}",
+	"%{IncludeDir.glm}"
 	}
 	links{
 		"GLFW",
 		"GLAD",
+		"glm",
 		"ImGui",
 		"opengl32.lib"
 	}
@@ -104,7 +109,8 @@ project "SandboxTesting"
 	includedirs
 	{
 	"Blueberry-Engine/vendor/spdlog/include",
-	"Blueberry-Engine/src"
+	"Blueberry-Engine/src",
+	"%{IncludeDir.glm}"
 	}
 
 	links
