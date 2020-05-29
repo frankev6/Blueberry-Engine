@@ -160,6 +160,7 @@
     <ClInclude Include="src\BlueberryEngine\Logic\Modules\Trans2D.h" />
     <ClInclude Include="src\BlueberryEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\BlueberryEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\BlueberryEngine\Renderer\Shader.h" />
     <ClInclude Include="src\BlueberryEngine\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
@@ -585,6 +586,7 @@
     <ClCompile Include="src\BlueberryEngine\Logic\Entity.cpp" />
     <ClCompile Include="src\BlueberryEngine\Logic\Modules\Module.cpp" />
     <ClCompile Include="src\BlueberryEngine\Logic\Modules\Trans2D.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />

@@ -5,6 +5,7 @@
 #include "Window.h"
 #include <BlueberryEngine/LayerStack.h>
 #include "BlueberryEngine/ImGui/ImGuiLayer.h"
+#include "BlueberryEngine/Renderer/Shader.h"
 
 namespace BE {
 
@@ -33,6 +34,9 @@ namespace BE {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	};
 
 	Application* CreateApplication();
