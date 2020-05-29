@@ -32,7 +32,7 @@ namespace BE {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class BE_API Event
+	class  Event
 	{
 	public:
 		bool Handled = false;
@@ -48,7 +48,7 @@ namespace BE {
 		}
 	};
 
-	class BE_API EventDispatcher
+	class  EventDispatcher
 	{
 	public:
 		EventDispatcher(Event& event)

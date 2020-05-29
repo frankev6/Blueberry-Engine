@@ -8,7 +8,7 @@
 
 namespace BE {
 
-	class BE_API Application
+	class  Application
 	{
 	public:
 		Application();

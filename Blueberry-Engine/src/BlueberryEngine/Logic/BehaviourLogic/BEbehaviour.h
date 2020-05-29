@@ -4,7 +4,7 @@
 
 namespace BE
 {
-	class BE_API BEbehaviour {
+	class  BEbehaviour {
 	public:
 		
 		BEbehaviour();

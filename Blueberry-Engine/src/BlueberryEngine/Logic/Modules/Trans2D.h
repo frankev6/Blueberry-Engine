@@ -3,7 +3,7 @@
 
 namespace BE
 {
-	class BE_API Trans2D : public Module {
+	class  Trans2D : public Module {
 
 
 

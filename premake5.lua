@@ -9,6 +9,7 @@ workspace "Blueberry-Engine"
 		"Dist"
 	}
 
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 	
 -- Include directories relative to root folder (solution directory)
@@ -26,9 +27,10 @@ group ""
 
 project "Blueberry-Engine"
 	location "Blueberry-Engine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -62,8 +64,6 @@ project "Blueberry-Engine"
 
 	
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "off"
 		systemversion "latest"
 		
 		defines{
@@ -71,30 +71,30 @@ project "Blueberry-Engine"
 			"BE_BUILD_DLL",
 			"_WINDLL",
 			"GLFW_INCLUDE_NONE",
+			"_CRT_SECURE_NO_WARNINGS"
 		}
 
-	postbuildcommands{
-	("{COPY} %{cfg.buildtarget.relpath} \"../bin/" ..outputdir.. "/SandboxTesting/\"")
-	}
 	filter "configurations:Debug"
 		defines "BE_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "BE_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "BE_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "SandboxTesting"
 	location "SandboxTesting"
 	kind "ConsoleApp"
+	cppdialect "C++17"
 	language "C++"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -119,8 +119,6 @@ project "SandboxTesting"
 	}
 	
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "off"
 		systemversion "latest"
 		
 		defines{
@@ -131,14 +129,14 @@ project "SandboxTesting"
 	filter "configurations:Debug"
 		defines "BE_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "BE_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "BE_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"

@@ -1,14 +1,12 @@
 #pragma once
 
-#ifdef BE_PLATFORM_WINDOWS	
+/*#ifdef BE_PLATFORM_WINDOWS	
 	#ifdef BE_BUILD_DLL
-		#define	BE_API __declspec(dllexport)
-	#else
-		#define	BE_API __declspec(dllimport)
+
 	#endif 
 #else
 #error	Blueberry only supports Windows
-#endif
+#endif*/
 
 #ifdef BE_DEBUG
 	#define BE_ENABLE_ASSERTS	

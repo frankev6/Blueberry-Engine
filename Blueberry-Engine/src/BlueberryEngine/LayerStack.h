@@ -7,7 +7,7 @@
 
 namespace BE {
 
-	class BE_API LayerStack
+	class  LayerStack
 	{
 	public:
 		LayerStack();

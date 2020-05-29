@@ -2,6 +2,8 @@
 #include "bepch.cpp"
 #include <BlueberryEngine\Window.h>
 #include <GLFW\glfw3.h>
+#include "BlueberryEngine//Renderer/GraphicsContext.h"
+
 namespace BE {
 
 	class WindowsWindow : public Window
@@ -26,6 +28,7 @@ namespace BE {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData {
 			std::string Title;
