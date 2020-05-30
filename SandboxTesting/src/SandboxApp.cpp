@@ -6,7 +6,6 @@ public:
 	ExampleLayer() : Layer("Example") {}
 
 	void OnUpdate() override {
-		BE_INFO("ExampleLayer::Update"); 
 		if (BE::Input::IsKeyPressed(BE_KEY_TAB))
 			BE_TRACE("Tab key is pressed (poll)!");
 	}
