@@ -9,8 +9,8 @@ namespace BE {
 	
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None: BE_C_ASSERT(false, "RendererAPI: None is currently supported"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLVertexBuffer(vertices, size);
+		case RendererAPI::API::None: BE_C_ASSERT(false, "RendererAPI: None is currently supported"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLVertexBuffer(vertices, size);
 		}
 
 		BE_C_ASSERT(false,"Uknown RendererAPI!" );
@@ -21,8 +21,8 @@ namespace BE {
 	
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None: BE_C_ASSERT(false, "RendererAPI: None is currently supported"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLIndexBuffer(indices, size);
+		case RendererAPI::API::None: BE_C_ASSERT(false, "RendererAPI: None is currently supported"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLIndexBuffer(indices, size);
 		}
 
 		BE_C_ASSERT(false, "Uknown RendererAPI!");

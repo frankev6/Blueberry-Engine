@@ -2,7 +2,7 @@
 #include "Application.h"
 #include "Log.h"
 #include "Input.h"
-#include <glad/glad.h>
+#include "BlueberryEngine/Renderer/Renderer.h"
 
 namespace BE
 {
@@ -108,12 +108,19 @@ namespace BE
 
 	void Application::Run() {
 		while (m_Running) {
-			glClearColor(0.06f, 0.06f, 0.06f,1);
-			glClear(GL_COLOR_BUFFER_BIT);
 
-			m_Shader->Bind();
-			m_VertexArray->Bind();
-			glDrawElements(GL_TRIANGLES,m_IndexBuffer->GetCount(),GL_UNSIGNED_INT, nullptr);
+			RenderCommand::SetClearColor({0.06f, 0.06f, 0.06f, 1 });
+			RenderCommand::Clear();
+
+			Renderer::BeginScene();
+			
+
+
+				m_Shader->Bind();
+
+				Renderer::Submit(m_VertexArray);
+
+				Renderer::EndScene();
 
 			for (Layer* layer : m_LayerStack)
 			{
