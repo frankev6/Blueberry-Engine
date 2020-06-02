@@ -143,6 +143,7 @@
     <ClInclude Include="src\BlueberryEngine.h" />
     <ClInclude Include="src\BlueberryEngine\Application.h" />
     <ClInclude Include="src\BlueberryEngine\Core.h" />
+    <ClInclude Include="src\BlueberryEngine\Core\Time.h" />
     <ClInclude Include="src\BlueberryEngine\EntryPoint.h" />
     <ClInclude Include="src\BlueberryEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\BlueberryEngine\Events\Event.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="src\BlueberryEngine\Logic\Modules\Trans2D.h" />
     <ClInclude Include="src\BlueberryEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\BlueberryEngine\Renderer\Buffer.h" />
+    <ClInclude Include="src\BlueberryEngine\Renderer\Camera.h" />
     <ClInclude Include="src\BlueberryEngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\BlueberryEngine\Renderer\RenderCommand.h" />
     <ClInclude Include="src\BlueberryEngine\Renderer\Renderer.h" />
@@ -595,6 +597,7 @@
     <ClCompile Include="src\BlueberryEngine\Logic\Modules\Module.cpp" />
     <ClCompile Include="src\BlueberryEngine\Logic\Modules\Trans2D.cpp" />
     <ClCompile Include="src\BlueberryEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\BlueberryEngine\Renderer\Camera.cpp" />
     <ClCompile Include="src\BlueberryEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\BlueberryEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="src\BlueberryEngine\Renderer\RendererAPI.cpp" />

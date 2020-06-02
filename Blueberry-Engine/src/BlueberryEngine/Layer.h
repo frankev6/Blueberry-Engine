@@ -1,5 +1,5 @@
 #pragma once
-
+#include "BlueberryEngine/Core/Time.h"
 #include "BlueberryEngine/Core.h"
 #include "BlueberryEngine/Events/Event.h"
 
@@ -13,7 +13,7 @@ namespace BE
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Time t) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

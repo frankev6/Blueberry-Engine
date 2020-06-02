@@ -4,13 +4,8 @@
 #include "Events/ApplicationEvent.h"
 #include "Window.h"
 #include <BlueberryEngine/LayerStack.h>
-#include "BlueberryEngine/ImGui/ImGuiLayer.h"
-
-
-#include "BlueberryEngine/Renderer/Shader.h"
-#include "Renderer/Buffer.h"
-#include <BlueberryEngine\Renderer\VertexArray.h>
-
+#include "BlueberryEngine/Core/Time.h"
+#include "ImGui/ImGuiLayer.h"
 
 namespace BE {
 
@@ -39,11 +34,9 @@ namespace BE {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		float m_LastFrameTime = 0.0f;
 
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexBuffer> m_VertexBuffer;
-		std::shared_ptr<IndexBuffer> m_IndexBuffer;
-		std::shared_ptr<VertexArray> m_VertexArray;
+
 	};
 
 	Application* CreateApplication();
