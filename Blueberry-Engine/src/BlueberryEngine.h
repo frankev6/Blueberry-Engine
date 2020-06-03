@@ -26,3 +26,6 @@
 #include "BlueberryEngine/Input.h"
 #include "BlueberryEngine/KeyCodes.h"
 #include "BlueberryEngine/MouseButtonCodes.h"
+
+//platform
+#include "Platform/OpenGL/OpenGLShader.h"

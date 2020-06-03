@@ -1357,6 +1357,7 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\BlueberryEngine\Renderer\Camera.h" />
     <ClInclude Include="src\BlueberryEngine\Core\Time.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BlueberryEngine\Application.cpp">
@@ -1409,5 +1410,6 @@
     <ClCompile Include="src\BlueberryEngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\BlueberryEngine\Renderer\Camera.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
   </ItemGroup>
 </Project>

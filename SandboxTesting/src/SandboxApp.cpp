@@ -1,23 +1,25 @@
 #include	<BlueberryEngine.h>
 #include	 "imgui/imgui.h"
 
+#include "glm/gtc/matrix_transform.hpp"
+#include <glm\glm\gtc\type_ptr.hpp>
+
 class ExampleLayer : public BE::Layer {
 public:
 
-	ExampleLayer() : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0,0,0) {
+	ExampleLayer() : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0), m_trianglePosition(0) {
 	
 		m_VertexArray.reset(BE::VertexArray::Create());
 
-		float vertices[3 * 7] = {
-			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
-			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
-			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
+		float vertices[3 * 3] = {
+			-0.5f, -0.5f, 0.0f, 
+			 0.5f, -0.5f, 0.0f, 
+			 0.0f,  0.5f, 0.0f
 		};
 
 		m_VertexBuffer.reset(BE::VertexBuffer::Create(vertices, sizeof(vertices)));
 		BE::BufferLayout layout = {
-			{ BE::ShaderDataType::Float3, "a_Position" },
-			{ BE::ShaderDataType::Float4, "a_Color" }
+			{ BE::ShaderDataType::Float3, "a_Position" }
 		};
 
 		m_VertexBuffer->SetLayout(layout);
@@ -31,16 +33,14 @@ public:
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_Position;
-			layout(location = 1) in vec4 a_Color;
 			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
 			out vec3 v_Position;
-			out vec4 v_Color;
 			void main()
 			{
 				v_Position = a_Position;
-				v_Color = a_Color;
 				gl_Position = vec4(a_Position, 1.0);	
-				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);	
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -49,23 +49,20 @@ public:
 			
 			layout(location = 0) out vec4 color;
 			in vec3 v_Position;
-			in vec4 v_Color;
+			uniform vec3 v_Color;
 			void main()
 			{
-				color = vec4(v_Position * 0.5 + 0.5, 1.0);
-				color = v_Color;
+				color = vec4(v_Color,1.0f);
 			}
 		)";
 
-		m_Shader.reset(new BE::Shader(vertexSrc, fragmentSrc));
+		m_Shader.reset(BE::Shader::Create(vertexSrc, fragmentSrc));
 
 
 	}
 
 	void OnUpdate(BE::Time t) override {
-
-		BE_TRACE("delta time: {0}",t.GetSeconds());
-
+		
 		if (BE::Input::IsKeyPressed(BE_KEY_LEFT)) {
 			m_CameraPosition.x -= camSpeed * t.GetSeconds();
 		}
@@ -90,14 +87,21 @@ public:
 		m_Camera.SetRotation(camRotation);
 		BE::Renderer::BeginScene(m_Camera);
 
-		BE::Renderer::Submit(m_VertexArray, m_Shader);
+
+		std::dynamic_pointer_cast<BE::OpenGLShader>(m_Shader)->Bind();
+		std::dynamic_pointer_cast<BE::OpenGLShader>(m_Shader)->UploadUniformFloat3("v_Color", m_ShaderColor);
+		glm::mat4 transform = glm::translate(glm::mat4(1.0f), m_trianglePosition);
+
+		BE::Renderer::Submit(m_VertexArray, m_Shader, transform);
 
 		BE::Renderer::EndScene();
 	}
 
 	virtual void OnImGuiRender() override
 	{
-		
+		ImGui::Begin("Settings");
+		ImGui::ColorEdit3("Square Color", glm::value_ptr(m_ShaderColor));
+		ImGui::End();
 	}
 	
 	void OnEvent(BE::Event& event) override {
@@ -109,15 +113,18 @@ public:
 
 private:
 
-	std::shared_ptr<BE::Shader> m_Shader;
-	std::shared_ptr<BE::VertexBuffer> m_VertexBuffer;
-	std::shared_ptr<BE::IndexBuffer> m_IndexBuffer;
-	std::shared_ptr<BE::VertexArray> m_VertexArray;
+	BE::Ref<BE::Shader> m_Shader;
+	BE::Ref<BE::VertexBuffer> m_VertexBuffer;
+	BE::Ref<BE::IndexBuffer> m_IndexBuffer;
+	BE::Ref<BE::VertexArray> m_VertexArray;
 
 	BE::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
 	float camSpeed = 2;
 	float camRotation = 0.0f;
+
+	glm::vec3 m_trianglePosition;
+	glm::vec3 m_ShaderColor = {255,255,255};
 };
 
 
