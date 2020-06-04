@@ -105,7 +105,7 @@ public:
 		auto textureShader = m_ShaderLibrary.Get("Texture");
 
 		m_Texture->Bind();
-		BE::Renderer::Submit(m_VertexArray, textureShader, transform);
+		BE::Renderer::Submit(m_VertexArray, m_FlatColorShader, transform);
 
 		BE::Renderer::EndScene();
 	}

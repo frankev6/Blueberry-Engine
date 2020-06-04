@@ -11,7 +11,7 @@ namespace BE
 			switch (Renderer::GetAPI())
 			{
 			case RendererAPI::API::None: BE_C_ASSERT(false, "RendererAPI: None is currently supported"); return nullptr;
-			case RendererAPI::API::OpenGL: return std::make_shared<OpenGLShader>(filepath);
+			case RendererAPI::API::OpenGL: return CreateRef<OpenGLShader>(filepath);
 			}
 
 			BE_C_ASSERT(false, "Uknown RendererAPI!");
@@ -23,7 +23,7 @@ namespace BE
 		switch (Renderer::GetAPI())
 		{
 		case RendererAPI::API::None: BE_C_ASSERT(false, "RendererAPI: None is currently supported"); return nullptr;
-		case RendererAPI::API::OpenGL: return std::make_shared<OpenGLShader>(vertextSrc, fragmentSrc);
+		case RendererAPI::API::OpenGL: return CreateRef<OpenGLShader>(name, vertextSrc, fragmentSrc);
 		}
 
 		BE_C_ASSERT(false, "Uknown RendererAPI!");
