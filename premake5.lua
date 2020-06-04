@@ -18,6 +18,7 @@ IncludeDir["GLFW"] = "Blueberry-Engine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Blueberry-Engine/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Blueberry-Engine/vendor/imgui"
 IncludeDir["glm"] = "Blueberry-Engine/vendor/glm"
+IncludeDir["stb_image"] = "Blueberry-Engine/vendor/stb_image"
 
 group "Dependencies"
 include "Blueberry-Engine/vendor/GLFW"
@@ -38,10 +39,13 @@ project "Blueberry-Engine"
 	pchheader "bepch.h"
 	pchsource "%{prj.name}/src/bepch.cpp"
 
+
 	files
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
 		"%{prj.name}/vendor/glm/glm/**.inl",
 		"%{prj.name}/vendor/glm/glm/**.hpp"
 	}
@@ -53,7 +57,8 @@ project "Blueberry-Engine"
 	"%{IncludeDir.GLFW}",
 	"%{IncludeDir.GLAD}",
 	"%{IncludeDir.ImGui}",
-	"%{IncludeDir.glm}"
+	"%{IncludeDir.glm}",
+	"%{IncludeDir.stb_image}"
 	}
 	links{
 		"GLFW",

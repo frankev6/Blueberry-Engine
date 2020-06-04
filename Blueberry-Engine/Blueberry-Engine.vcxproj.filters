@@ -7,6 +7,9 @@
     <Filter Include="src\BlueberryEngine">
       <UniqueIdentifier>{3E622227-AAC3-FF34-3331-46E79F9136F4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\BlueberryEngine\Core">
+      <UniqueIdentifier>{569D081A-42C2-579A-6B0D-3D2A579156B8}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\BlueberryEngine\Events">
       <UniqueIdentifier>{625CC7C3-4E6C-7394-B725-D8B2A354622D}</UniqueIdentifier>
     </Filter>
@@ -22,8 +25,14 @@
     <Filter Include="src\BlueberryEngine\Logic\Modules">
       <UniqueIdentifier>{830ED676-EF7C-2BF6-3866-E6F5A4132192}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\BlueberryEngine\Renderer">
+      <UniqueIdentifier>{A40B0BCA-90C6-FA75-397E-73C025184506}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
@@ -49,6 +58,9 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BlueberryEngine.h">
@@ -59,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="src\BlueberryEngine\Core.h">
       <Filter>src\BlueberryEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Core\Time.h">
+      <Filter>src\BlueberryEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\BlueberryEngine\EntryPoint.h">
       <Filter>src\BlueberryEngine</Filter>
@@ -108,8 +123,53 @@
     <ClInclude Include="src\BlueberryEngine\MouseButtonCodes.h">
       <Filter>src\BlueberryEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\Buffer.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\Camera.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\GraphicsContext.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\RenderCommand.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\Renderer.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\RendererAPI.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\Shader.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\Texture.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlueberryEngine\Renderer\VertexArray.h">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\BlueberryEngine\Window.h">
       <Filter>src\BlueberryEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
@@ -1344,20 +1404,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\BlueberryEngine\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\BlueberryEngine\Renderer\Shader.h" />
-    <ClInclude Include="src\BlueberryEngine\Renderer\Buffer.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="src\BlueberryEngine\Renderer\Renderer.h" />
-    <ClInclude Include="src\BlueberryEngine\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\BlueberryEngine\Renderer\RendererAPI.h" />
-    <ClInclude Include="src\BlueberryEngine\Renderer\RenderCommand.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="src\BlueberryEngine\Renderer\Camera.h" />
-    <ClInclude Include="src\BlueberryEngine\Core\Time.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BlueberryEngine\Application.cpp">
@@ -1390,6 +1439,48 @@
     <ClCompile Include="src\BlueberryEngine\Logic\Modules\Trans2D.cpp">
       <Filter>src\BlueberryEngine\Logic\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="src\BlueberryEngine\Renderer\Buffer.cpp">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlueberryEngine\Renderer\Camera.cpp">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlueberryEngine\Renderer\RenderCommand.cpp">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlueberryEngine\Renderer\Renderer.cpp">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlueberryEngine\Renderer\RendererAPI.cpp">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlueberryEngine\Renderer\Shader.cpp">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlueberryEngine\Renderer\Texture.cpp">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlueberryEngine\Renderer\VertexArray.cpp">
+      <Filter>src\BlueberryEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1399,17 +1490,8 @@
     <ClCompile Include="src\bepch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\BlueberryEngine\Renderer\Shader.cpp" />
-    <ClCompile Include="src\BlueberryEngine\Renderer\Buffer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\BlueberryEngine\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\BlueberryEngine\Renderer\VertexArray.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="src\BlueberryEngine\Renderer\RendererAPI.cpp" />
-    <ClCompile Include="src\BlueberryEngine\Renderer\RenderCommand.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="src\BlueberryEngine\Renderer\Camera.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

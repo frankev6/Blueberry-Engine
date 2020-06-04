@@ -11,25 +11,27 @@ public:
 	
 		m_VertexArray.reset(BE::VertexArray::Create());
 
-		float vertices[3 * 3] = {
-			-0.5f, -0.5f, 0.0f, 
-			 0.5f, -0.5f, 0.0f, 
-			 0.0f,  0.5f, 0.0f
+		float vertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f,  0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f,  1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f,	 1.0f, 1.0f,
+			 -0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
 		m_VertexBuffer.reset(BE::VertexBuffer::Create(vertices, sizeof(vertices)));
 		BE::BufferLayout layout = {
-			{ BE::ShaderDataType::Float3, "a_Position" }
+			{ BE::ShaderDataType::Float3, "a_Position" },
+			{ BE::ShaderDataType::Float2, "a_TexCoord" }
 		};
 
 		m_VertexBuffer->SetLayout(layout);
 		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
 
-		uint32_t indices[3] = { 0,1,2 };
+		uint32_t indices[6] = { 0,1,2,2,3,0 };
 		m_IndexBuffer.reset(BE::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
 
-		std::string vertexSrc = R"(
+		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_Position;
@@ -44,7 +46,7 @@ public:
 			}
 		)";
 
-		std::string fragmentSrc = R"(
+		std::string flatColorShaderFragmentSrc = R"(
 			#version 330 core
 			
 			layout(location = 0) out vec4 color;
@@ -56,8 +58,16 @@ public:
 			}
 		)";
 
-		m_Shader.reset(BE::Shader::Create(vertexSrc, fragmentSrc));
+		m_FlatColorShader = BE::Shader::Create("VertexPosColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
+		
 
+		m_FlatColorShader = BE::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
+		auto textureShader = m_ShaderLibrary.Load("Assets/Shaders/Texture.glsl");
+
+		m_Texture = BE::Texture2D::Create("Assets/Textures/BlueStripes.png");
+
+		std::dynamic_pointer_cast<BE::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<BE::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 
 	}
 
@@ -88,11 +98,14 @@ public:
 		BE::Renderer::BeginScene(m_Camera);
 
 
-		std::dynamic_pointer_cast<BE::OpenGLShader>(m_Shader)->Bind();
-		std::dynamic_pointer_cast<BE::OpenGLShader>(m_Shader)->UploadUniformFloat3("v_Color", m_ShaderColor);
+		std::dynamic_pointer_cast<BE::OpenGLShader>(m_FlatColorShader)->Bind();
+		std::dynamic_pointer_cast<BE::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("v_Color", m_ShaderColor);
 		glm::mat4 transform = glm::translate(glm::mat4(1.0f), m_trianglePosition);
 
-		BE::Renderer::Submit(m_VertexArray, m_Shader, transform);
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
+		m_Texture->Bind();
+		BE::Renderer::Submit(m_VertexArray, textureShader, transform);
 
 		BE::Renderer::EndScene();
 	}
@@ -112,11 +125,13 @@ public:
 
 
 private:
-
-	BE::Ref<BE::Shader> m_Shader;
+	BE::ShaderLibrary m_ShaderLibrary;
+	BE::Ref<BE::Shader> m_FlatColorShader;
 	BE::Ref<BE::VertexBuffer> m_VertexBuffer;
 	BE::Ref<BE::IndexBuffer> m_IndexBuffer;
 	BE::Ref<BE::VertexArray> m_VertexArray;
+
+	BE::Ref<BE::Texture2D> m_Texture;
 
 	BE::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;

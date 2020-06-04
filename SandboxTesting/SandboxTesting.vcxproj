@@ -138,6 +138,17 @@
       <Project>{34EB650D-20E4-845F-4916-6AE4356E646B}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Textures\BlueStripes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\Texture.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\GameLogic\ChessBoard.h" />
+    <ClInclude Include="src\GameLogic\Pieces.h" />
+    <ClInclude Include="src\GameLogic\Tile.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

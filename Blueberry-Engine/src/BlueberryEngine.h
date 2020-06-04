@@ -17,6 +17,7 @@
 #include "BlueberryEngine/Renderer/RenderCommand.h"
 
 #include "BlueberryEngine/Renderer/Buffer.h"
+#include "BlueberryEngine/Renderer/Texture.h"
 #include "BlueberryEngine/Renderer/VertexArray.h"
 #include "BlueberryEngine/Renderer/Shader.h"
 
